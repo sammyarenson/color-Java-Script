@@ -25,18 +25,32 @@ Color.isColor = function(rgb){
 
 Color.redIntensity = function(rgb){
   let redIntensity = (rgb[0]/255)*100
-  redIntensity = math.round(redIntensity)
+  redIntensity = Math.Round(redIntensity)
 };
 
 //greenIntensity
 Color.greenIntensity = function(rgb){
   let greenIntensity (rgb[1]/255)*100
-
+  greenIntensity = Math.Round(greenIntensity)
 
 //blueIntensity
-
+Color.blueIntensity = function(rgb){
+  let blueIntensity = (rgb[2]/255)*100
+  blueIntensity = Math.Round(blueIntensity)
 
 //brightness
-
+Color.brightness = function(){
+    var bright;
+    bright = (Color.redIntensity(rgb)+ Color.blueIntensity(rgb)+ Color.greenIntensity(rgb))/3;
+    return  bright;
+}
 
 //complement
+color.complement = function(){
+    var complement=rgb;
+    rgb[0]=255-rgb[0];
+    rgb[1]=255-rgb[1];
+    rgb[2]=255-rgb[2];
+    
+    return complement;
+}
